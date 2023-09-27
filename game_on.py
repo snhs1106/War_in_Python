@@ -5,6 +5,8 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 
 class Card:
     
+    #Create every card in a deck with the suit and number
+
     def __init__(self,suit,rank):
         self.suit = suit
         self.rank = rank
@@ -14,6 +16,8 @@ class Card:
         return self.rank + " of " + self.suit
 
 class Deck:
+
+    #Create various Card objects that get added into a deck and create an entire 52 card deck.
     
     def __init__(self):
         
@@ -21,7 +25,7 @@ class Deck:
         
         for suit in suits:
             for rank in ranks:
-                #Create the Card Object
+                
                 created_card = Card(suit,rank)
                 self.all_cards.append(created_card)
                 
@@ -31,3 +35,27 @@ class Deck:
     
     def deal_one(self):
         return self.all_cards.pop()
+
+class Player:
+    
+    #Create each player and the moves they are allowed to do
+
+    def __init__(self,name):
+        
+        self.name = name
+        self.all_cards = []
+        
+    def remove_one(self):
+        return self.all_cards.pop(0)
+    
+    def add_cards(self,new_cards):
+        
+        #If a player wins, they put all the cards back into their deck
+
+        if type(new_cards) == type([]):
+            self.all_cards.extend(new_cards)
+        else:
+            self.all_cards.append(new_cards)
+    
+    def __str__(self):
+        return f'Player {self.name} has {len(self.all_cards)} cards.'
