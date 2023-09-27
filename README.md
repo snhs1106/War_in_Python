@@ -1,2 +1,5 @@
 # War_in_Python
-Using Python, I created the card game War
+
+Using Python, the card game War was created.
+
+The object of the game is for one player to end up with all the cards in the deck leading to a victory. The deck is divided amongst two players and each round consists of each player drawing their top card. The player with the highest valued card (Ace being the highest) takes their opponents card and places it into their own deck along with the card they had drawn. Then a new round is started where each player draw their next top card. If both players draw the same valued card, they go into 'War'. This means the players must each draw out 3 additional cards, place them faced down, and flip up an additional card after. Whoever has the highest valued card gains back their own drawn cards in addition to the drawn cards of the opponent. However, if the last card of the 'War', i.e. the flipped additional card after the draw of 3, is the same value for both players, they must each go into another 'War' until there is a winner to that round. The rounds are repeated until one player has all cards.
